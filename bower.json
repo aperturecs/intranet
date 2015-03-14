@@ -1,0 +1,21 @@
+{
+  "name": "apertureintra",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Vista <retail3210@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "moment": "~2.9.0"
+  }
+}

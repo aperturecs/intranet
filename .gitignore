@@ -1,0 +1,11 @@
+node_modules
+sftp-config.json
+logs/
+web/components/
+master-redis.conf
+dump.rdb
+.DS_Store
+*/**/.DS_Store
+**/.DS_Store
+.sublime-workspace
+

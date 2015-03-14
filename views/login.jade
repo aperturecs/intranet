@@ -1,0 +1,71 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    title Aperture Intranet
+
+    // Bootstrap
+    link(href="/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet")
+    link(href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet")
+
+    link(href='/css/common.css' rel='stylesheet')
+    link(href='/css/login.css' rel='stylesheet')
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  body
+    .login-bg: .overlay
+      form(action='/login' method='post').textarea.login-form#loginForm
+        h1.login-title Aperture
+        .input-group-lg: input(type="email" name="email" id="email" placeholder="Email" required="required").form-control.lined
+        .input-group-lg: input(type="password" id="pw" placeholder="Password" required="required").form-control.lined
+        input(style={display: 'none'} name="pw" id="realPw")
+        div 
+          button(type="submit").btn.btn-lg.btn-default.simple-btn#signIn Sign In
+          button(type='button' data-toggle='modal' data-target='#registerModal').btn.btn-lg.btn-default.simple-btn Register
+
+    #registerModal.modal.fade
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal')
+              span(aria-hidden='true') &times;
+              span(sr-only)
+            h4.modal-title 인트라넷 회원 가입
+          .modal-body
+            .form-group
+              label(for='registerEmail') 이메일 주소
+              input(type="email", id="registerEmail", placeholder='ex) sspark@dimigo.hs.kr', required="required").form-control
+            .form-group
+              label(for='registerPw') 패스워드 입력
+              input(type="password", id="registerPw", placeholder='패스워드 입력', required="required").form-control
+            .form-group
+              label(for='registerRePw') 패스워드 재입력
+              input(type="password", id="registerRePw", placeholder='패스워드 재입력', required="required").form-control
+            .form-group
+              label(for='registerName') 이름
+              input(type="text", id="registerName", placeholder='ex) 김효준', required="required").form-control
+            .form-group
+              label(for='registerSid') 학번
+              input(type="text", id="registerSid", placeholder='ex) 2616', required="required").form-control
+            .form-group
+              label(for='registerPhone') 휴대폰 번호 
+              input(type="text", id="registerPhone", placeholder='ex) 010-9124-4971', required="required").form-control
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') 취소
+            button.btn.btn-primary#register(type='button' data-dismiss='modal') 회원 가입
+
+    script(src='/components/jquery/dist/jquery.min.js')
+    script(src='/components/bootstrap/dist/js/bootstrap.min.js')
+    script(src='/js/sha256.js')
+    script(src='/js/login.js')
+
+

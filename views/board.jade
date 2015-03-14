@@ -1,0 +1,36 @@
+extends ./layout.jade
+
+block css
+  link(href='css/board.css' rel='stylesheet')
+
+block content
+  table.table.table-hover
+    thead
+      th.col-md-1.col-small 번호
+      th.col-md-8 제목
+      th.col-md-1.col-small 글쓴이
+      th.col-md-1.col-small 날짜
+      th.col-md-1.col-small 조회
+    tbody
+      each article in articles
+        tr
+          td.col-small= article.num
+          td=           article.name
+          td.col-small= article.authorName
+          td.col-small= moment(article.createdAt).format('MM/DD')
+          td.col-small= article.viewCount
+
+  #divider
+
+  nav#pager
+    ul.pagination
+      li: a(href="#") &laquo;
+      li.active: a(href="#") 1
+      li: a(href="#") 2
+      li: a(href="#") 3
+      li: a(href="#") 4
+      li: a(href="#") 5
+      li: a(href="#") &raquo;
+
+block script
+  script(src='js/board.js')

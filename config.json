@@ -1,0 +1,12 @@
+{
+    "production": "dev",
+    "mongo": "mongodb://127.0.0.1:27017/vista",
+    "redis": {
+        "write": {
+            "port": 10010
+        }
+    },
+    "port": {
+        "intranet": 10000
+    }
+}
